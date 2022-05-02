@@ -1,0 +1,11 @@
+[versions]
+# SDK
+minSdk = "26"
+targetSdk = "31"
+compileSdk = "31"
+
+# Dependencies
+kotlin = "1.6.1"
+
+[libraries]
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlin" }
