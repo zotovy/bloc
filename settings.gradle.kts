@@ -6,6 +6,6 @@ pluginManagement {
     }
 }
 
-rootProject.name = "My_Application"
+rootProject.name = "BLoC"
 include(":shared")
 enableFeaturePreview("VERSION_CATALOGS")
