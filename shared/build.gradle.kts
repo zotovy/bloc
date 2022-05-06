@@ -2,7 +2,7 @@ plugins {
     kotlin("multiplatform")
     kotlin("native.cocoapods")
     id("com.android.library")
-    id("maven-publish")
+    `maven-publish`
 }
 
 version = "1.0"
@@ -68,7 +68,7 @@ android {
 afterEvaluate {
     publishing {
         publications {
-            create<MavenPublication>("release") {
+            create<MavenPublication>("maven") {
                 groupId = "dev.zotov"
                 artifactId = "zotov"
                 version = "0.0.1"
