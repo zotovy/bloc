@@ -70,7 +70,7 @@ afterEvaluate {
         publications {
             create<MavenPublication>("maven") {
                 groupId = "dev.zotov"
-                artifactId = "zotov"
+                artifactId = "solarized"
                 version = "0.0.1"
             }
         }
