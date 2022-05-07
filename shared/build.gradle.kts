@@ -59,9 +59,16 @@ kotlin {
 android {
     compileSdk = libs.versions.compileSdk.get().toInt()
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
+
     defaultConfig {
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
+    }
+
+    buildTypes {
+        release {
+            this.isMinifyEnabled = false
+        }
     }
 }
 
