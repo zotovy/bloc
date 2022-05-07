@@ -41,8 +41,8 @@ afterEvaluate {
     publishing {
         publications {
             create<MavenPublication>("maven") {
-                groupId = "dev.zotov"
-                artifactId = "bloc"
+                groupId = "dev.zotov.bloc"
+                artifactId = "android"
                 version = "0.0.1"
             }
         }
