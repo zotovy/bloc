@@ -8,7 +8,9 @@ plugins {
 version = "1.0"
 
 kotlin {
-    android()
+    android() {
+        publishLibraryVariants("release")
+    }
     iosX64()
     iosArm64()
     iosSimulatorArm64()
@@ -65,6 +67,13 @@ android {
         targetSdk = libs.versions.targetSdk.get().toInt()
     }
 
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
+
     buildTypes {
         release {
             this.isMinifyEnabled = false
@@ -75,9 +84,10 @@ android {
 afterEvaluate {
     publishing {
         publications {
-            create<MavenPublication>("maven") {
-                groupId = "dev.zotov"
-                artifactId = "bloc"
+            create<MavenPublication>("release-multiplatform") {
+                from(components["release"])
+                groupId = "dev.zotov.bloc"
+                artifactId = "multiplatform"
                 version = "0.0.1"
             }
         }

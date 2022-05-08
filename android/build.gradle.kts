@@ -15,6 +15,13 @@ android {
         consumerProguardFiles("consumer-rules.pro")
     }
 
+//    publishing {
+//        singleVariant("release") {
+//            withSourcesJar()
+//            withJavadocJar()
+//        }
+//    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -37,14 +44,15 @@ dependencies {
     implementation(project(":shared"))
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication>("maven") {
-                groupId = "dev.zotov.bloc"
-                artifactId = "android"
-                version = "0.0.1"
-            }
-        }
-    }
-}
+//afterEvaluate {
+//    publishing {
+//        publications {
+//            create<MavenPublication>("release-android") {
+//                from(components["release"])
+//                groupId = "dev.zotov.bloc"
+//                artifactId = "android"
+//                version = "0.0.1"
+//            }
+//        }
+//    }
+//}
